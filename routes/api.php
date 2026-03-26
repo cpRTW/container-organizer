@@ -15,9 +15,9 @@ use App\Http\Controllers\Api\OrganizationController;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
 
 Route::post('/organization/check', [OrganizationController::class, 'check']);
+
+// Route::get('/test', function () {
+//     return "Working";
+// });
