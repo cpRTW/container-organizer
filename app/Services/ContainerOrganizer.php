@@ -40,7 +40,12 @@ class ContainerOrganizer
         sort($colSums);
 
         return [
-            'possible' => $rowSums === $colSums
+            'possible' => $rowSums === $colSums,
+            'rowSums' => $rowSums,
+            'colSums' => $colSums,
+            'message' => $rowSums === $colSums 
+                ? 'Organization possible' 
+                : 'Mismatch between container capacity and ball types'
         ];
     }
     
