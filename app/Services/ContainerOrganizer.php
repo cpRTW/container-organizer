@@ -8,6 +8,23 @@ class ContainerOrganizer
     {
         $n = count($matrix);
 
+        if ($n === 0) {
+            return ['possible' => false];
+        }
+
+        // Check square matrix + non-negative
+        foreach ($matrix as $row) {
+            if (!is_array($row) || count($row) !== $n) {
+                return ['possible' => false];
+            }
+
+            foreach ($row as $val) {
+                if (!is_numeric($val) || $val < 0) {
+                    return ['possible' => false];
+                }
+            }
+        }
+
         $rowSums = [];
         $colSums = array_fill(0, $n, 0);
 
@@ -23,9 +40,8 @@ class ContainerOrganizer
         sort($colSums);
 
         return [
-            'possible' => $rowSums === $colSums,
-            'rowSums' => $rowSums,
-            'colSums' => $colSums
+            'possible' => $rowSums === $colSums
         ];
     }
+    
 }
