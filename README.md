@@ -10,7 +10,7 @@ It determines whether containers can be rearranged so that each container holds 
 ## ⚙️ Setup
 
 ```bash
-git clone <your-repo-url>
+git clone <https://github.com/cpRTW/container-organizer>
 cd container-organizer
 composer install
 cp .env.example .env
