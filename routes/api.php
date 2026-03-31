@@ -19,8 +19,8 @@ use App\Http\Controllers\Api\OrganizationController;
 //     return "Working";
 // });
 
-// Route::middleware('auth:sanctum')->group(function () {
-//     Route::post('/organization/check', [OrganizationController::class, 'check']);
-// });
+Route::middleware(['auth'])->group(function () {
+    Route::post('/organization/check', [OrganizationController::class, 'check']);
+});
 
 //Route::post('/organization/check', [OrganizationController::class, 'check']);

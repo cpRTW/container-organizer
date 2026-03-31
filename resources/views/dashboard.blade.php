@@ -9,12 +9,20 @@
 </head>
 <body class="bg-light">
 
+<div style="display:flex; justify-content: space-between; align-items:center;background: #7b0707;">
+    <h2 style="padding: 10px;color: #fff;">Warehouse Container Organizer</h2>
+
+    <form method="POST" action="{{ route('logout') }}" style="padding: 10px;">
+        @csrf
+        <button type="submit" style="padding:8px 12px; background:#0d6efd; color:white; border:none;border-radius: 5px;">
+            Logout
+        </button>
+    </form>
+</div>
+
 <div class="container mt-5">
 
     <div class="card shadow">
-        <div class="card-header bg-primary text-white">
-            <h4>Warehouse Container Organizer</h4>
-        </div>
 
         <div class="card-body">
 
@@ -115,7 +123,7 @@
             alert('The matrix field is required.');
             return false;
         }
-        
+
         console.log(matrix);
         console.log($('meta[name="csrf-token"]').attr('content'));
 
